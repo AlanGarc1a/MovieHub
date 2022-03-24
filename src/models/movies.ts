@@ -5,4 +5,10 @@ export interface IMovie {
     year: number,
     image: string,
     imDbRating: number
+    type?: string,
+    plot?: string,
+    genres?: string,
+    runtimeStr?: string,
+    contentRating?: string,
+    description?: string
 }
