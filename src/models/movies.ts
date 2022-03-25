@@ -10,5 +10,6 @@ export interface IMovie {
     genres?: string,
     runtimeStr?: string,
     contentRating?: string,
-    description?: string
+    description?: string,
+    url?: string
 }
