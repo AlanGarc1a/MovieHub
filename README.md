@@ -10,7 +10,9 @@ To create a web application using the IMDB API. I was looking around on the drib
 
 NOTE: I did not create this design.
 
-![design image](https://dribbble.com/shots/2403683--Exploration-Movie-Streaming)
+![Original Creator](https://dribbble.com/shots/2403683--Exploration-Movie-Streaming)
+
+![design](https://user-images.githubusercontent.com/32556354/160254447-7572d6d7-e3b8-42f7-b037-cb058f5e7ef2.png)
 
 # Technologies
 
