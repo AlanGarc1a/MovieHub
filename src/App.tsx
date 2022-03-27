@@ -10,6 +10,7 @@ import PopularTVShows from "./components/pages/PopularTVShows";
 import MovieView from "./components/pages/MovieView";
 import MovieSearch from "./components/pages/MovieSearch";
 import ShowSearch from "./components/pages/ShowSearch";
+import NotFound from "./components/NotFound";
 
 const App: React.FC = () => {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
@@ -34,6 +35,7 @@ const App: React.FC = () => {
         <Route path="show">
           <Route path="search" element={<ShowSearch />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );
