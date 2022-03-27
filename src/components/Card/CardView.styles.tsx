@@ -18,8 +18,6 @@ export const Movie = styled.div`
 
 export const MovieImgContainer = styled.div`
   width: 53%;
-  //height: 100%;
-  //background-color: var(--white);
 
   @media screen and (max-width: 768px) {
     display: none;
@@ -28,7 +26,7 @@ export const MovieImgContainer = styled.div`
 
 export const MovieViewImg = styled.img`
   max-width: 100%;
-  max-height: 100%;
+  height: 100%;
   object-fit: cover;
   opacity: 0.8;
 `;
@@ -43,7 +41,7 @@ export const MovieDetails = styled.div<IMovieDetailsProps>`
     background-image: linear-gradient(
         to right bottom,
         rgba(45, 54, 64, 0.8),
-        rgba(139, 148, 146, 0.8)
+        rgba(171, 204, 210, 0.8)
       ),
       url(${(props) => props.image});
     background-attachment: fixed;
@@ -75,18 +73,28 @@ export const MovieSubDetails = styled.div`
 `;
 
 export const MovieSubDetail = styled.div`
+  font-size: 2rem;
   margin-right: 2.5rem;
+`;
+
+export const MovieWikiUrl = styled.a`
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--primary);
+  margin-right: 2.5rem;
+  font-size: 2rem;
 `;
 
 export const MovieFooter = styled.div`
   display: flex;
-  font-size: 2rem;
   margin-top: 4rem;
 `;
 
 export const TrailerLink = styled.a`
+  font-size: 2rem;
   display: inline-block;
   text-decoration: none;
-  color: var(--light-green);
+  color: var(--primary);
   margin-right: 3rem;
 `;
