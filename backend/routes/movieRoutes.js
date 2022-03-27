@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
     }
 
     axios.request(options).then(response => {
-        res.json(response.data);
+        res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     })
 });
 
@@ -24,9 +24,9 @@ router.get('/popularMovies', (req, res) => {
     }
 
     axios.request(options).then(response => {
-        res.json(response.data);
+        res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     })
 });
 
@@ -39,7 +39,7 @@ router.get('/popularTVShows', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
@@ -52,7 +52,7 @@ router.get('/upcomingMovies', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
@@ -67,7 +67,7 @@ router.get('/movie/search/:term', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
@@ -82,7 +82,7 @@ router.get('/show/search/:term', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
@@ -97,7 +97,7 @@ router.get('/:movieId', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
@@ -112,7 +112,22 @@ router.get('/trailer/:movieId', (req, res) => {
     axios.request(options).then(response => {
         res.status(200).json(response.data);
     }).catch(error => {
-        console.log(error);
+        res.status(400).json({ error: 'Bad request' });
+    });
+});
+
+router.get('/wiki/:movieId', (req, res) => {
+    const { movieId } = req.params;
+
+    const options = {
+        method: 'GET',
+        url: `https://imdb-api.com/en/API/Wikipedia/${process.env.REACT_APP_MOVIE_API_KEY}/${movieId}`
+    }
+
+    axios.request(options).then(response => {
+        res.status(200).json(response.data);
+    }).catch(error => {
+        res.status(400).json({ error: 'Bad request' });
     });
 });
 
