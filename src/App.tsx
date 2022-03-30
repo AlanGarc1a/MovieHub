@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/Sidebar/";
 import Navbar from "./components/NavBar/NavBar";
 import GlobalStyle from "./globalStyles";
 import { Routes, Route } from "react-router-dom";
