@@ -42,4 +42,8 @@ export const ListContentTitle = styled.span`
   font-weight: 300;
   color: var(--white);
   align-self: center;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 2rem;
+  }
 `;
