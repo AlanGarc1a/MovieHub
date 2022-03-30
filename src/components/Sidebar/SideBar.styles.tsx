@@ -9,7 +9,11 @@ export const NavContainer = styled.aside`
   background-color: var(--grey);
   z-index: 99;
 
-  @media screen and (max-width: 768px) {
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1024px) {
     display: none;
   }
 
