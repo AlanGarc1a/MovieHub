@@ -12,7 +12,7 @@ import {
   MenuListLink,
   MenuHome,
 } from "./Navbar.styles";
-import { NavLinks } from "../SideBar";
+import { NavLinks } from "../Sidebar";
 import { INavBarProps } from "../../models/navbarProps";
 import { Link } from "react-router-dom";
 
