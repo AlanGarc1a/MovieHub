@@ -6,6 +6,22 @@ MovieHub is a web application that uses the IMDB API to display movies and TV Sh
 
 To create a web application using the IMDB API. I was looking around on the dribble website for movie streaming design and saw a design that I really liked and wanted to take that design and build it using React.js. Also, I wanted to get familiar using TypeScript and to use TypeScript with React.js.
 
+# Installation
+
+To install this project,
+
+1. Clone the repository into your system,
+
+   ```
+   git clone https://github.com/AlanGarc1a/MovieHub.git
+   ```
+
+2. Once you clone the repository, install dependencies using
+
+   ```
+   npm install
+   ```
+
 # Design
 
 NOTE: I did not create this design.
