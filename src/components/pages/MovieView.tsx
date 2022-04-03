@@ -19,6 +19,7 @@ import Container from "../Container/Container";
 import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 import { Grid } from "../Grid/Grid";
+import { Navigate } from "react-router-dom";
 
 const MovieView: React.FC = () => {
   const [movie, setMovie] = useState<IMovie>();
@@ -42,14 +43,16 @@ const MovieView: React.FC = () => {
         `http://localhost:8000/api/movies/wiki/${movieId}`
       );
 
-      console.log(urlRes);
-
-      setMovie(movieRes.data);
-      setTrailer(trailerRes.data.link);
-      setExtUrl(urlRes.data.url);
-      setLoading(false);
+      if (movieRes.status === 200) {
+        setMovie(movieRes.data);
+        setTrailer(trailerRes.data.link);
+        setExtUrl(urlRes.data.url);
+        setLoading(false);
+      }
     } catch (error) {
-      console.log(error);
+      if (error) {
+        <Navigate replace to="*" />;
+      }
     }
   };
 

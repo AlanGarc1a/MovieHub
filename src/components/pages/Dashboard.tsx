@@ -6,6 +6,7 @@ import { IMovie } from "../../models/movies";
 import MovieCard from "../Card/Card";
 import Text from "../Text/Text";
 import Spinner from "../Spinner/Spinner";
+import { Navigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
   const [movies, setMovies] = useState<IMovie[]>([]);
@@ -20,7 +21,9 @@ const Dashboard: React.FC = () => {
       setMovies(items);
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      if (error) {
+        <Navigate replace to="*" />;
+      }
     }
   };
 
