@@ -25,4 +25,4 @@ jobs:
       - run: npm run build --if-present
       - run: npm test
       - name: Backend test
-      - run: npm test:backend
+        run: npm test:backend
