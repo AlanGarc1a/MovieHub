@@ -5,10 +5,16 @@ const app = express();
 
 const port = 8000;
 
+app.use('/static', express.static(path.join(__dirname, 'client/build')));
+
 app.use(cors());
 
 app.use('/api/movies', movieRoutes);
 
-app.listen(port, () => {
-    console.log('Listening on port 8000');
-})
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port, () => {
+        console.log(`Listening on port ${port}`)
+    });
+}
+
+module.exports = app;
