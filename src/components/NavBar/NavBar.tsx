@@ -11,7 +11,7 @@ import {
   MenuListItem,
   MenuListLink,
   MenuHome,
-} from "./Navbar.styles";
+} from "./NavBar.styles";
 import { NavLinks } from "../Sidebar";
 import { INavBarProps } from "../../models/navbarProps";
 import { Link } from "react-router-dom";
