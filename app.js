@@ -6,7 +6,7 @@ const app = express();
 
 const port = 8000;
 
-app.use('/static', express.static(path.join(__dirname, 'build')));
+app.use('/static', express.static(path.join(__dirname, './build')));
 
 app.use(cors());
 
