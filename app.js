@@ -3,10 +3,12 @@ const cors = require('cors');
 const path = require('path');
 const movieRoutes = require('./backend/routes/movieRoutes')
 const app = express();
-
 const port = process.env.PORT || 8000;
 
+
 app.use(cors());
+app.use(express.json());
+app.use('/api/movies', movieRoutes);
 
 if (process.env.NODE_ENV === "production") {
     app.use(express.static('build'));
@@ -15,7 +17,6 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-app.use('/api/movies', movieRoutes);
 
 if (process.env.NODE_ENV !== 'test') {
     app.listen(port, () => {
