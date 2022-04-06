@@ -5,7 +5,7 @@ const movieRoutes = require('./backend/routes/movieRoutes')
 const app = express();
 const port = process.env.PORT || 8000;
 
-const whitelist = ['htpp://localhost:3000', 'http://localhost:8000', 'https://moviehub17.herokuapp.com']
+const whitelist = ['http://localhost:3000', 'http://localhost:8000', 'https://moviehub17.herokuapp.com']
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || whitelist.indexOf(origin) !== -1) callback(null, true)
