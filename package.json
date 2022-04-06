@@ -27,11 +27,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start:backend": "nodemon app.js",
+    "start:backend": "node app.js",
     "test:backend": "jest backend/routes.test.js --watch"
   },
   "eslintConfig": {

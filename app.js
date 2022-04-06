@@ -1,14 +1,11 @@
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-}
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const movieRoutes = require('./backend/routes/movieRoutes')
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8000;
 
-const whitelist = ['http://localhost:8000', 'https://moviehub17.herokuapp.com']
+const whitelist = ['htpp://localhost:3000', 'http://localhost:8000', 'https://moviehub17.herokuapp.com']
 const corsOptions = {
     origin: function (origin, callback) {
         if (!origin || whitelist.indexOf(origin) !== -1) callback(null, true)
@@ -18,7 +15,6 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions));
-app.options('*', cors());
 app.use(express.json());
 app.use('/api/movies', movieRoutes);
 
@@ -29,11 +25,8 @@ if (process.env.NODE_ENV === "production") {
     });
 }
 
-
-if (process.env.NODE_ENV !== 'test') {
-    app.listen(port, () => {
-        console.log(`Listening on port ${port}`)
-    });
-}
+app.listen(port, () => {
+    console.log(`Listening on port ${port}`);
+});
 
 module.exports = app;
